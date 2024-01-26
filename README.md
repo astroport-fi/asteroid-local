@@ -11,7 +11,11 @@
 
 ## Accounts
 
-1. `cosmos1m9l358xunhhwds0568za49mzhvuxx9uxre5tud` - `banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass`
+| Address      | Mnemonic |
+| ----------- | ----------- |
+| cosmos1m9l358xunhhwds0568za49mzhvuxx9uxre5tud | banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass |
+| cosmos10h9stc5v6ntgeygf5xf945njqq5h32r53uquvw | veteran try aware erosion drink dance decade comic dawn museum release episode original list ability owner size tuition surface ceiling depth seminar capable only |
+
 
 ## Setup Cosmos Hub
 
