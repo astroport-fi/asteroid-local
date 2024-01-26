@@ -69,19 +69,28 @@ git clone https://github.com/astroport-fi/asteroid-protocol
 
 ### Setup Indexer
 
-```
-cd indexer
+1. `cd indexer`
+2. Create `.env` file
+    ```bash
+    cp .env.template .env
+    ```
+3. Create DB migrations
 
-# create DB migrations
-AUTO_MIGRATE=true make run 
+    ```bash
+    AUTO_MIGRATE=true make run 
+    ```
+4. Open [DB Explorer](http://localhost:8888/?pgsql=db&username=admin&db=meteors&ns=public&sql=) and create status row for local Cosmos hub
 
-# Open DB Explorer and create status row for local Cosmos hub
-INSERT INTO "status" ("id", "chain_id", "last_processed_height", "base_token", "base_token_usd", "date_updated", "last_known_height") VALUES
-(1,	'gaialocal-1',	1,	'ATOM',	9.419,	NULL, 1);
+    ```bash
+    INSERT INTO "status" ("id", "chain_id", "last_processed_height", "base_token", "base_token_usd", "date_updated", "last_known_height") VALUES
+    (1,	'gaialocal-1',	1,	'ATOM',	9.419,	NULL, 1);
+    ```
 
-# run indexer
-make run
-```
+5. Run indexer
+
+    ```
+    make run
+    ```
 
 ### Load Hasura API configuration
 
