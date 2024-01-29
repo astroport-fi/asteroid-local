@@ -12,6 +12,6 @@ $HERMES_BINARY --config ./network/hermes/config.toml keys delete --chain test-1 
 $HERMES_BINARY --config ./network/hermes/config.toml keys add --key-name testkey_1 --chain test-1 --mnemonic-file <(echo "alley afraid soup fall idea toss can goose become valve initial strong forward bright dish figure check leopard decide warfare hub unusual join cart")
 sleep 5
 
-$HERMES_BINARY --config ./network/hermes/config.toml keys delete --chain test-2 --all
-$HERMES_BINARY --config ./network/hermes/config.toml keys add --key-name testkey_2 --chain test-2 --mnemonic-file <(echo "record gift you once hip style during joke field prize dust unique length more pencil transfer quit train device arrive energy sort steak upset")
+$HERMES_BINARY --config ./network/hermes/config.toml keys delete --chain gaialocal-1 --all
+$HERMES_BINARY --config ./network/hermes/config.toml keys add --key-name testkey_2 --chain gaialocal-1 --mnemonic-file <(echo "record gift you once hip style during joke field prize dust unique length more pencil transfer quit train device arrive energy sort steak upset")
 sleep 5

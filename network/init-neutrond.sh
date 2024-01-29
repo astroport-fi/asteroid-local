@@ -5,8 +5,8 @@ BINARY=${BINARY:-neutrond}
 BASE_DIR=./data
 CHAINID=${CHAINID:-test-1}
 STAKEDENOM=${STAKEDENOM:-untrn}
-CONTRACTS_BINARIES_DIR=${CONTRACTS_BINARIES_DIR:-./contracts}
-THIRD_PARTY_CONTRACTS_DIR=${THIRD_PARTY_CONTRACTS_DIR:-./contracts_thirdparty}
+CONTRACTS_BINARIES_DIR=${CONTRACTS_BINARIES_DIR:-../neutron/contracts}
+THIRD_PARTY_CONTRACTS_DIR=${THIRD_PARTY_CONTRACTS_DIR:-../neutron/contracts_thirdparty}
 
 # IMPORTANT! minimum_gas_prices should always contain at least one record, otherwise the chain will not start or halt
 # ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2 denom is required by intgration tests (test:tokenomics)
