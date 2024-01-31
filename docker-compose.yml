@@ -14,6 +14,10 @@ services:
   adminer:
     image: adminer
     restart: always
+    depends_on:
+      - db
+    links:
+      - db
     ports:
       - 8888:8080
 
@@ -21,10 +25,14 @@ services:
     image: hasura/graphql-engine:v2.36.0
     ports:
       - 8080:8080
+    depends_on:
+      - db
+    links:
+      - db
     restart: always
     environment:
       HASURA_GRAPHQL_SERVER_PORT: 8080
-      DATABASE_URL: postgres://admin:admin1@db:5432/meteors
+      HASURA_GRAPHQL_DATABASE_URL: postgres://admin:admin1@db:5432/meteors
       ## postgres database to store Hasura metadata
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://admin:admin1@db:5432/postgres
       ## this env var can be used to add the above postgres database to Hasura as a data source. this can be removed/updated based on your needs
@@ -39,6 +47,7 @@ services:
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
       # HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
+      # HASURA_GRAPHQL_ENABLED_APIS: graphql,metadata
       # HASURA_GRAPHQL_METADATA_DEFAULTS: '{"backend_configs":{"dataconnector":{"athena":{"uri":"http://data-connector-agent:8081/api/v1/athena"},"mariadb":{"uri":"http://data-connector-agent:8081/api/v1/mariadb"},"mysql8":{"uri":"http://data-connector-agent:8081/api/v1/mysql"},"oracle":{"uri":"http://data-connector-agent:8081/api/v1/oracle"},"snowflake":{"uri":"http://data-connector-agent:8081/api/v1/snowflake"}}}}'
 
 
@@ -47,6 +56,6 @@ volumes:
 
 
 networks: 
-  default: 
+  default:
     external: 
-      name: asteroid
+      name: external-example 
