@@ -87,7 +87,7 @@ git clone https://github.com/astroport-fi/asteroid-protocol
 
     ```bash
     INSERT INTO "status" ("id", "chain_id", "last_processed_height", "base_token", "base_token_usd", "date_updated", "last_known_height") VALUES
-    (1,	'gaialocal-1',	1,	'ATOM',	9.419,	NULL, 1);
+    (1,	'gaialocal-1',	1,	'ATOM',	9.419,	NOW(), 1);
     ```
 
 5. Run indexer
