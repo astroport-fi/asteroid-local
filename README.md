@@ -16,6 +16,17 @@
 | cosmos1m9l358xunhhwds0568za49mzhvuxx9uxre5tud | banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass |
 | cosmos10h9stc5v6ntgeygf5xf945njqq5h32r53uquvw | veteran try aware erosion drink dance decade comic dawn museum release episode original list ability owner size tuition surface ceiling depth seminar capable only |
 
+## Prerequisites
+
+### General
+- Docker - https://docs.docker.com/get-docker/
+- Go - https://go.dev/doc/install
+
+### Frontend (if you want to run frontend)
+- Node.js - https://nodejs.org/
+
+### Relayer (if you want to run relayer)
+- Rust - https://www.rust-lang.org/tools/install
 
 ## Setup Cosmos Hub
 
@@ -170,6 +181,36 @@ await window.keplr.experimentalSuggestChain({
 });
 ```
 
-## Additional Resources
+## Appendix
+
+### Setup Neutron
+
+1. Clone repo
+
+    ```bash
+    git clone --depth 1 --branch v2.0.0 https://github.com/neutron-org/neutron
+    ```
+
+2. Install `neutrond`
+
+    ```bash
+    cd neutron && make install
+    ```
+
+### Setup Relayer
+
+1. Install Hermes
+
+    ```instal
+    cargo install ibc-relayer-cli --bin hermes --version 1.6.0 --locked
+    ```
+
+2. Run relayer
+
+    ```bash
+    ./network/hermes/start.sh
+    ```
+
+### Additional Resources
 
 - https://docs.neutron.org/neutron/build-and-run/localnet/
