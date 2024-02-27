@@ -54,7 +54,7 @@
 3. Create a docker network
 
     ```bash
-    docker network create asteroid
+    docker network create external-example
     ```
 
 4. Run services with Docker
@@ -78,11 +78,19 @@ git clone https://github.com/astroport-fi/asteroid-protocol
     ```bash
     cp .env.template .env
     ```
-3. Create DB migrations
+
+3. Install [Atlas migration tool CLI](https://atlasgo.io/)
+
+    ```curl
+    curl -sSf https://atlasgo.sh | sh
+    ```
+
+4. Run migrations
 
     ```bash
-    AUTO_MIGRATE=true make run 
+    atlas migrate apply --env local
     ```
+
 4. Open [DB Explorer](http://localhost:8888/?pgsql=db&username=admin&db=meteors&ns=public&sql=) and create status row for local Cosmos hub
 
     ```bash
