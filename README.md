@@ -197,6 +197,18 @@ await window.keplr.experimentalSuggestChain({
     cd neutron && make install
     ```
 
+3. Init Neutron
+
+    ```bash
+    ./network/init-and-start-neutron.sh
+    ```
+
+    once initialized run
+
+    ```bash
+    ./network/start-neutron.sh
+    ```
+
 ### Setup Relayer
 
 1. Install Hermes
