@@ -12,6 +12,7 @@ export ROSETTA=9080
 export GRPCPORT=9090
 export GRPCWEB=9091
 export STAKEDENOM=uatom
+export RUN_BACKGROUND=0
 
 "$script_full_path"/init.sh
 "$script_full_path"/init-gaiad.sh
