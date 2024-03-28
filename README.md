@@ -2,7 +2,7 @@
 
 ## Links
 
-- Frontend - http://localhost:4200/app
+- Frontend - http://localhost:5173/app
 - Hasura Console / GraphQL playground - http://localhost:8080/console
 - GraphQL API - http://localhost:8080/v1/graphql
 - DB Explorer - http://localhost:8888/?pgsql=db&username=admin&db=meteors&ns=public
@@ -15,6 +15,8 @@
 | ----------- | ----------- |
 | cosmos1m9l358xunhhwds0568za49mzhvuxx9uxre5tud | banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass |
 | cosmos10h9stc5v6ntgeygf5xf945njqq5h32r53uquvw | veteran try aware erosion drink dance decade comic dawn museum release episode original list ability owner size tuition surface ceiling depth seminar capable only |
+| cosmos14xcrdjwwxtf9zr7dvaa97wy056se6r5e8q68mw | obscure canal because tomorrow tribe sibling describe satoshi kiwi upgrade bless empty math trend erosion oblige donate label birth chronic hazard ensure wreck shine |
+
 
 ## Prerequisites
 
@@ -102,14 +104,17 @@ git clone https://github.com/astroport-fi/asteroid-protocol
     atlas migrate apply --env local
     ```
 
-4. Open [DB Explorer](http://localhost:8888/?pgsql=db&username=admin&db=meteors&ns=public&sql=) and create status row for local Cosmos hub
+5. Open [DB Explorer](http://localhost:8888/?pgsql=db&username=admin&db=meteors&ns=public&sql=) and create all views from https://github.com/astroport-fi/asteroid-protocol/blob/main/indexer/schema.sql#L373
+
+
+6. Open [DB Explorer](http://localhost:8888/?pgsql=db&username=admin&db=meteors&ns=public&sql=) and create status row for local Cosmos hub
 
     ```bash
     INSERT INTO "status" ("id", "chain_id", "last_processed_height", "base_token", "base_token_usd", "date_updated", "last_known_height") VALUES
     (1,	'gaialocal-1',	1,	'ATOM',	9.419,	NOW(), 1);
     ```
 
-5. Run indexer
+7. Run indexer
 
     ```
     make run
@@ -128,11 +133,9 @@ git clone https://github.com/astroport-fi/asteroid-protocol
 ### Setup Frontend
 
 ```
-npm install -g @angular/cli
-
-cd frontend
-yarn install
-ng serve --configuration development
+cd app
+npm install
+npm run dev
 ```
 
 ## Add Local Cosmos Hub to Keplr or Leap
