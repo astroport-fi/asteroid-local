@@ -35,7 +35,7 @@
 1. Clone repo
 
     ```bash
-    git clone --depth 1 --branch v14.1.0 https://github.com/cosmos/gaia
+    git clone --depth 1 --branch v15.1.0 https://github.com/cosmos/gaia
     ```
 
 2. Install `gaiad`
