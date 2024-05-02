@@ -11,12 +11,36 @@
 
 ## Accounts
 
-| Address      | Mnemonic |
-| ----------- | ----------- |
-| cosmos1m9l358xunhhwds0568za49mzhvuxx9uxre5tud | banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass |
-| cosmos10h9stc5v6ntgeygf5xf945njqq5h32r53uquvw | veteran try aware erosion drink dance decade comic dawn museum release episode original list ability owner size tuition surface ceiling depth seminar capable only |
-| cosmos14xcrdjwwxtf9zr7dvaa97wy056se6r5e8q68mw | obscure canal because tomorrow tribe sibling describe satoshi kiwi upgrade bless empty math trend erosion oblige donate label birth chronic hazard ensure wreck shine |
+| Cosmos Hub Address | Neutron Address   | Mnemonic |
+| ----------- |  ----------- | ----------- |
+| cosmos1m9l358xunhhwds0568za49mzhvuxx9uxre5tud | neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2 | banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass |
+| cosmos10h9stc5v6ntgeygf5xf945njqq5h32r53uquvw | neutron10h9stc5v6ntgeygf5xf945njqq5h32r54rf7kf | veteran try aware erosion drink dance decade comic dawn museum release episode original list ability owner size tuition surface ceiling depth seminar capable only |
+| cosmos14xcrdjwwxtf9zr7dvaa97wy056se6r5e8q68mw | neutron14xcrdjwwxtf9zr7dvaa97wy056se6r5erln9pf | obscure canal because tomorrow tribe sibling describe satoshi kiwi upgrade bless empty math trend erosion oblige donate label birth chronic hazard ensure wreck shine |
 
+### Add mnemonic Cosmos Hub
+
+```bash
+echo "banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass" | gaiad keys add test --recover
+```
+
+check balances
+
+```bash
+gaiad query bank balances "$(gaiad keys show test -a)" --node tcp://0.0.0.0:16657
+```
+
+
+### Add mnemonic Neutron
+
+```bash
+echo "banner spread envelope side kite person disagree path silver will brother under couch edit food venture squirrel civil budget number acquire point work mass" | neutrond keys add test --recover
+```
+
+check balances
+
+```bash
+neutrond query bank balances "$(neutrond keys show test -a)" --node tcp://0.0.0.0:26657
+```
 
 ## Prerequisites
 
