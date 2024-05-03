@@ -203,10 +203,53 @@ await window.keplr.experimentalSuggestChain({
         coinMinimalDenom: 'uatom',
         coinDecimals: 6
     },
-    coinType: 118,
-    features: ['stargate', 'ibc-transfer']
+    features: ['ibc-transfer']
 });
 ```
+
+For Neutron
+
+```javascript
+await window.keplr.experimentalSuggestChain({
+    chainId: "test-1",
+    chainName: "Local Neutron",
+    rpc: "http://localhost:26657",
+    rest: "http://localhost:1317",
+    bip44: {
+        coinType: 118,
+    },
+    bech32Config: {
+        bech32PrefixAccAddr: "neutron",
+        bech32PrefixAccPub: "neutron" + "pub",
+        bech32PrefixValAddr: "neutron" + "valoper",
+        bech32PrefixValPub: "neutron" + "valoperpub",
+        bech32PrefixConsAddr: "neutron" + "valcons",
+        bech32PrefixConsPub: "neutron" + "valconspub",
+    },
+    currencies: [
+        {
+            coinDenom: 'NTRN',
+            coinMinimalDenom: 'untrn',
+            coinDecimals: 6
+        },
+    ],
+    feeCurrencies: [
+        {
+            coinDenom: 'NTRN',
+            coinMinimalDenom: 'untrn',
+            coinDecimals: 6,
+            gasPriceStep: { low: 0.1, average: 0.2, high: 0.3 }
+        }
+    ],
+    stakeCurrency: {
+        coinDenom: 'NTRN',
+        coinMinimalDenom: 'untrn',
+        coinDecimals: 6
+    },
+    features: ['ibc-transfer', 'cosmwasm']
+});
+```
+
 
 ## Appendix
 
